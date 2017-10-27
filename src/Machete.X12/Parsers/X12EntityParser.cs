@@ -7,13 +7,17 @@
     using Texts;
 
 
-    public class X12Parser<TSchema> :
-        SchemaParser<TSchema>
+    /// <summary>
+    /// Parses X12 entities from text, given a single X12 message
+    /// </summary>
+    /// <typeparam name="TSchema"></typeparam>
+    public class X12EntityParser<TSchema> :
+        SchemaEntityParser<TSchema>
         where TSchema : X12Entity
     {
-        readonly TextParser _messageParser = new X12MessageParser();
+        readonly ITextParser _messageParser = new X12MessageTextParser();
 
-        public X12Parser(ISchema<TSchema> schema)
+        public X12EntityParser(ISchema<TSchema> schema)
             : base(schema)
         {
         }

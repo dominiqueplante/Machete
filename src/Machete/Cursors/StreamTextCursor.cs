@@ -12,7 +12,7 @@
         TextCursor
     {
         readonly TextSpan _nextSpan;
-        readonly TextParser _parser;
+        readonly ITextParser _parser;
         readonly StreamText _text;
         readonly TextSpan _valueSpan;
 
@@ -22,7 +22,7 @@
         ParseText _value;
         bool _valueComputed;
 
-        public StreamTextCursor(StreamText text, TextSpan valueSpan, TextSpan nextSpan, TextParser parser)
+        public StreamTextCursor(StreamText text, TextSpan valueSpan, TextSpan nextSpan, ITextParser parser)
         {
             _text = text;
             _valueSpan = valueSpan;
@@ -67,7 +67,7 @@
             return _next;
         }
 
-        public static async Task<TextCursor> ParseText(StreamText text, TextSpan span, TextParser parser)
+        public static async Task<TextCursor> ParseText(StreamText text, TextSpan span, ITextParser parser)
         {
             var result = parser.Parse(text, span);
             if (NeedsMoreInput(text, span, result))

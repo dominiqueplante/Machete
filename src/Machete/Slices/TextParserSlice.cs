@@ -17,7 +17,7 @@
     {
         readonly ParseText _sourceText;
         readonly TextSpan _sourceSpan;
-        readonly TextParser _parser;
+        readonly ITextParser _parser;
         readonly IList<TSlice> _slices;
 
         TextSpan _parseSpan;
@@ -25,7 +25,7 @@
         bool _textComputed;
         ParseText _text;
 
-        protected TextParserSlice(ParseText text, TextSpan span, TextParser parser)
+        protected TextParserSlice(ParseText text, TextSpan span, ITextParser parser)
         {
             _sourceText = text;
             _sourceSpan = span;

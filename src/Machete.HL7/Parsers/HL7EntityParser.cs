@@ -7,13 +7,13 @@
     using Texts;
 
 
-    public class HL7Parser<TSchema> :
-        SchemaParser<TSchema>
+    public class HL7EntityParser<TSchema> :
+        SchemaEntityParser<TSchema>
         where TSchema : HL7Entity
     {
-        readonly TextParser _messageParser = new HL7MessageParser();
+        readonly ITextParser _messageParser = new HL7MessageParser();
 
-        public HL7Parser(ISchema<TSchema> schema)
+        public HL7EntityParser(ISchema<TSchema> schema)
             : base(schema)
         {
         }

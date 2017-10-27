@@ -20,7 +20,7 @@
         /// <typeparam name="TSchema">The parser's schema type</typeparam>
         /// <returns>An initialized parser, ready to use</returns>
         /// <exception cref="SchemaConfigurationException"></exception>
-        public static IParser<TSchema> CreateHL7<TSchema>(this IParserFactorySelector selector, ISchema<TSchema> schema,
+        public static IEntityParser<TSchema> CreateHL7<TSchema>(this IParserFactorySelector selector, ISchema<TSchema> schema,
             Action<IHL7ParserConfigurator> configure = null)
             where TSchema : HL7Entity
         {

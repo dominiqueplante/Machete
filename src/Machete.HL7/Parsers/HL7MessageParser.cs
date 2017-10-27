@@ -7,7 +7,7 @@
     /// Parses an HL7 message from the input text, separating in the case of multiple messages in the same body
     /// </summary>
     public class HL7MessageParser :
-        TextParser
+        ITextParser
     {
         static readonly LineTextParser _lineParser = new LineTextParser();
 
