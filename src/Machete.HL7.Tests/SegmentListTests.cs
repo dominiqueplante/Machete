@@ -33,7 +33,6 @@ NTE|3|z|abc";
             
             Assert.That(result.HasResult, Is.True);
             Assert.That(result.Select(x => x.Notes).HasValue, Is.True);
-            Assert.That(result.Select(x => x.Notes).IsPresent, Is.True);
             
             var sourceOfComment = result.Select(x => x.Notes)[1].Select(x => x.SourceOfComment).ValueOrDefault();
             

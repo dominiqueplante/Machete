@@ -20,27 +20,18 @@
 
         public override ParseResult<TSchema> Parse(ParseText text, TextSpan span)
         {
+            var result = _messageParser.Parse(text, span);
+            if (!result.HasResult)
+                return new EmptyParseResult<TSchema>(Schema, text, result.Next);
+
             if (span.Length == 0)
-                throw new MacheteParserException("The body was empty");
+                return new EmptyParseResult<TSchema>(Schema, text, span);
 
-            int i = span.Start;
-            for (; i < span.End; i++)
-            {
-                if (!char.IsWhiteSpace(text[i]))
-                    break;
-            }
-
-            if (i + 8 > span.End)
-                throw new MacheteParserException("The body must contain at least 8 characters");
-
-            if (text[i] != 'M' || text[i + 1] != 'S' || text[i + 2] != 'H')
-                throw new MacheteParserException("The body must start with an MSH segment");
-
-            var settings = GetHL7Settings(text, TextSpan.FromBounds(i, span.End));
+            var settings = ParseSettings(text, result.Result);
 
             var streamText = new StreamText(text, null);
 
-            var textCursor = new StreamTextCursor(streamText, TextSpan.FromBounds(i, span.End), TextSpan.FromBounds(span.End, span.End), _messageParser);
+            var textCursor = new StreamTextCursor(streamText, result.Result, result.Next, _messageParser);
 
             return new HL7ParseResult<TSchema>(Schema, settings, textCursor);
         }
@@ -49,14 +40,14 @@
         {
             var result = await StreamTextCursor.ParseText(text, span, _messageParser);
             if (!result.HasCurrent)
-                return new EmptyParseResult<TSchema>(Schema, text, span);
+                return new EmptyParseResult<TSchema>(Schema, text, result.NextSpan);
 
-            var settings = GetHL7Settings(result.InputText, result.CurrentSpan);
+            var settings = ParseSettings(result.InputText, result.CurrentSpan);
 
             return new HL7ParseResult<TSchema>(Schema, settings, result);
         }
 
-        static HL7ParserSettings GetHL7Settings(ParseText text, TextSpan span)
+        static HL7ParserSettings ParseSettings(ParseText text, TextSpan span)
         {
             var offset = span.Start;
 

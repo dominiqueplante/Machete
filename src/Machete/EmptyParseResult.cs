@@ -13,6 +13,13 @@
             RemainingText = text;
             RemainingSpan = remainingSpan;
         }
+        
+        public EmptyParseResult(ISchema<TSchema> schema, ParseText text, TextSpan remainingSpan)
+        {
+            Schema = schema;
+            RemainingText = new StreamText(text, null);
+            RemainingSpan = remainingSpan;
+        }
 
         public bool TryGetEntity<T>(int index, out T entity)
             where T : TSchema
@@ -26,5 +33,7 @@
         public StreamText RemainingText { get; }
 
         public TextSpan RemainingSpan { get; }
+
+        public bool HasResult => false;
     }
 }

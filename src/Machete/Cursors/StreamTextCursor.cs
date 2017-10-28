@@ -67,6 +67,17 @@
             return _next;
         }
 
+        public static Task<TextCursor> ParseText(ParseText text, TextSpan span, ITextParser parser)
+        {
+            var result = parser.Parse(text, span);
+            if (result.HasResult)
+            {
+                return Task.FromResult<TextCursor>(new StreamTextCursor(new StreamText(text, null), result.Result, result.Next, parser));
+            }
+
+            return Task.FromResult<TextCursor>(new EmptyTextCursor(new StreamText(text, null), span));
+        }
+
         public static async Task<TextCursor> ParseText(StreamText text, TextSpan span, ITextParser parser)
         {
             var result = parser.Parse(text, span);

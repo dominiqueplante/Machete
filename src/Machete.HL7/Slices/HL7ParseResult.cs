@@ -36,6 +36,7 @@
             return false;
         }
 
+        public bool HasResult => true;
         public ISchema<TSchema> Schema { get; }
         public StreamText RemainingText => _cursor.InputText;
         public TextSpan RemainingSpan => _cursor.NextSpan;

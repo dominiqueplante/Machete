@@ -1,7 +1,6 @@
 ﻿namespace Machete.X12.Formatters
 {
     using System;
-    using Machete.Formatters;
 
 
     public static class FormatContextExtensions

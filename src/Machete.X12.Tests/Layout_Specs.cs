@@ -27,10 +27,10 @@
 
             Assert.That(result.HasResult, Is.True);
             Assert.That(result.Select(x => x.ISA), Is.Not.Null);
-            Assert.That(result.Select(x => x.ISA).IsPresent, Is.True);
+            Assert.That(result.Select(x => x.ISA).HasValue, Is.True);
 
-            Assert.That(result.Select(x => x.GS).IsPresent, Is.True);
-            Assert.That(result.Select(x => x.TransactionSetHeader).IsPresent, Is.True);
+            Assert.That(result.Select(x => x.GS).HasValue, Is.True);
+            Assert.That(result.Select(x => x.TransactionSetHeader).HasValue, Is.True);
         }
     }
 }

@@ -24,10 +24,12 @@
         {
             using (var writer = new StreamWriter(output))
             {
+                var context = new StringBuilderFormatContext();
+                context.AddSettings(_settings);
+
                 for (int i = 0;; i++)
                 {
-                    TSchema entity;
-                    if (!input.TryGetEntity(i, out entity))
+                    if (!input.TryGetEntity(i, out TSchema entity))
                         break;
 
                     X12Segment segment = entity as X12Segment;
@@ -35,22 +37,19 @@
                         throw new MacheteSchemaException($"The entity is not an X12 segment: {TypeCache.GetShortName(entity.GetType())}");
 
                     if (i > 0)
-                        await writer.WriteAsync(_settings.SegmentSeparator);
+                        await writer.WriteAsync(_settings.SegmentSeparator).ConfigureAwait(false);
 
                     if (_schema.TryGetEntityFormatter(entity, out var entityFormatter))
                     {
-                        var context = new StringBuilderFormatContext();
-                        context.AddSettings(_settings);
-
                         entityFormatter.Format(context, entity);
-
-                        await writer.WriteAsync(context.ToString()).ConfigureAwait(false);
                     }
                     else
                     {
                         throw new MacheteSchemaException($"The entity type was not found: {TypeCache.GetShortName(entity.GetType())}");
                     }
                 }
+
+                await writer.WriteAsync(context.ToString()).ConfigureAwait(false);
             }
 
             return new HL7FormatResult<TSchema>();

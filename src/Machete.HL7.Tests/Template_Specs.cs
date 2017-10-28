@@ -25,10 +25,10 @@
             
             Assert.That(result.HasResult, Is.True);
             Assert.That(result.Select(x => x.MSH), Is.Not.Null);
-            Assert.That(result.Select(x => x.MSH).IsPresent, Is.True);
-            Assert.That(result.Select(x => x.Optional).IsPresent, Is.True);
+            Assert.That(result.Select(x => x.MSH).HasValue, Is.True);
+            Assert.That(result.Select(x => x.Optional).HasValue, Is.True);
             Assert.That(result.Select(x => x.Optional).Select(x => x.EVN), Is.Not.Null);
-            Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).IsPresent, Is.False);
+            Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).HasValue, Is.False);
         }
 
         [Test]
@@ -48,10 +48,10 @@ EVN|A08|201701131234|||12901";
 
             Assert.That(result.HasResult, Is.True);
             Assert.That(result.Select(x => x.MSH), Is.Not.Null);
-            Assert.That(result.Select(x => x.MSH).IsPresent, Is.True);
-            Assert.That(result.Select(x => x.Optional).IsPresent, Is.True);
+            Assert.That(result.Select(x => x.MSH).HasValue, Is.True);
+            Assert.That(result.Select(x => x.Optional).HasValue, Is.True);
             Assert.That(result.Select(x => x.Optional).Select(x => x.EVN), Is.Not.Null);
-            Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).IsPresent, Is.True);
+            Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).HasValue, Is.True);
             Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).HasValue, Is.True);
             Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).Select(x => x.SegmentId).HasValue, Is.True);
             Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).Select(x => x.RecordedDateTime).HasValue, Is.True);
@@ -67,10 +67,10 @@ EVN|A08|201701131234|||12901";
             
             Assert.That(result.HasResult, Is.True);
             Assert.That(result.Select(x => x.MSH), Is.Not.Null);
-            Assert.That(result.Select(x => x.MSH).IsPresent, Is.True);
-            Assert.That(result.Select(x => x.Optional).IsPresent, Is.True);
+            Assert.That(result.Select(x => x.MSH).HasValue, Is.True);
+            Assert.That(result.Select(x => x.Optional).HasValue, Is.True);
             Assert.That(result.Select(x => x.Optional).Select(x => x.EVN), Is.Not.Null);
-            Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).IsPresent, Is.True);
+            Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).HasValue, Is.True);
             Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).HasValue, Is.True);
             Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).Select(x => x.SegmentId).HasValue, Is.True);
             Assert.That(result.Select(x => x.Optional).Select(x => x.EVN).Select(x => x.RecordedDateTime).HasValue, Is.True);
