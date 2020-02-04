@@ -8,6 +8,8 @@
     using Configuration;
     using HL7;
     using HL7Schema.V26;
+    using X12;
+    using X12Schema.V5010;
 
 
     [Config(typeof(DotNetCoreBenchmarkConfig))]

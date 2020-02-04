@@ -1,30 +1,34 @@
-#r @"src/packages/FAKE/tools/FakeLib.dll"
+#r "paket:
+nuget Fake.Core.Target //"
+// include Fake modules, see Fake modules section
+
 open System.IO
-open Fake
-open Fake.AssemblyInfoFile
-open Fake.Git.Information
-open Fake.SemVerHelper
+open Fake.Core
+open Fake.IO
 open System
 
-let buildArtifactPath = FullName "./build_artifacts"
-let packagesPath = FullName "./src/packages"
-let keyFile = FullName "./Machete.snk"
+// TODO: reintroduce semantic versioning
+
+
+let buildArtifactPath = Path.getFullName("./build_artifacts")
+let packagesPath = Path.getFullName( "./src/packages")
+let keyFile = Path.getFullName( "./Machete.snk")
 
 let assemblyVersion = "1.0.0.0"
 let baseVersion = "1.0.0"
 
-let envVersion = (environVarOrDefault "APPVEYOR_BUILD_VERSION" (baseVersion + ".0"))
+let envVersion = (Fake.Core.Environment.environVarOrDefault "APPVEYOR_BUILD_VERSION" (baseVersion + ".0"))
 let buildVersion = (envVersion.Substring(0, envVersion.LastIndexOf('.')))
 
-let semVersion : SemVerInfo = (parse buildVersion)
+//let semVersion : SemVerInfo = SemVer.parser(buildVersion)
 
-let Version = semVersion.ToString()
+let Version = "1.0.0"
 
 let branch = (fun _ ->
-  (environVarOrDefault "APPVEYOR_REPO_BRANCH" (getBranchName "."))
+  (Fake.Core.Environment.environVarOrDefault "APPVEYOR_REPO_BRANCH" (getBranchName "."))
 )
 
-let FileVersion = (environVarOrDefault "APPVEYOR_BUILD_VERSION" (Version + "." + "0"))
+let FileVersion = (Fake.Core.Environment.environVarOrDefault "APPVEYOR_BUILD_VERSION" (Version + "." + "0"))
 
 let informationalVersion = (fun _ ->
   let branchName = (branch ".")
@@ -46,38 +50,25 @@ let versionArgs = [ @"/p:Version=""" + NuGetVersion + @""""; @"/p:PackageVersion
 
 printfn "Using version: %s" Version
 
-Target "Clean" (fun _ ->
-  ensureDirectory buildArtifactPath
-
-  CleanDir buildArtifactPath
+// *** Define Targets ***
+Target.create "Clean" (fun _ ->
+  Trace.log " --- Cleaning stuff --- "
 )
 
-Target "RestorePackages" (fun _ -> 
-  DotNetCli.Restore (fun p -> { p with Project = "./src/" } )
+Target.create "Build" (fun _ ->
+  Trace.log " --- Building the app --- "
 )
 
-Target "Build" (fun _ ->
-  DotNetCli.Build (fun p-> { p with Project = @".\src\Machete.sln"
-                                    Configuration= "Release"
-                                    AdditionalArgs = versionArgs })
+Target.create "Deploy" (fun _ ->
+  Trace.log " --- Deploying app --- "
 )
 
-Target "Package" (fun _ ->
-  DotNetCli.Pack (fun p-> { p with 
-                                Project = @".\src\Machete.sln"
-                                Configuration= "Release"
-                                OutputPath= buildArtifactPath
-                                AdditionalArgs = versionArgs @ [ @"--include-symbols"; @"--include-source" ] })
-)
+open Fake.Core.TargetOperators
 
-Target "Default" (fun _ ->
-  trace "Build starting..."
-)
-
+// *** Define Dependencies ***
 "Clean"
-  ==> "RestorePackages"
   ==> "Build"
-  ==> "Package"
-  ==> "Default"
+  ==> "Deploy"
 
-RunTargetOrDefault "Default"
+// *** Start Build ***
+Target.runOrDefault "Deploy"

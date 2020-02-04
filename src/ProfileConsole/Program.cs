@@ -10,6 +10,7 @@ namespace ProfileConsole
     {
         static void Main(string[] args)
         {
+            // TODO: print framework being used
             Stopwatch stopwatch = Stopwatch.StartNew();
 
             var schema = Schema.Factory.CreateHL7Version26();
@@ -18,7 +19,8 @@ namespace ProfileConsole
 
             TimeSpan elapsedTime = stopwatch.Elapsed;
 
-            Console.WriteLine("Schema Initialization: 00:00:{0:00}.{1:00}", elapsedTime.Seconds, elapsedTime.Milliseconds / 10);
+            Console.WriteLine("HL7 2.6 Schema Initialization time hh:mm:ss:SS: 00:00:{0:00}.{1:00}", elapsedTime.Seconds, elapsedTime.Milliseconds / 10);
+            Console.WriteLine("Done");
         }
     }
 }
