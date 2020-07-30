@@ -21,5 +21,9 @@
     <Content Include="Content\MultipleHL7Messages.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Remove="Content\HR7Message.txt" />
+    <Content Include="Content\HR7Message.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
