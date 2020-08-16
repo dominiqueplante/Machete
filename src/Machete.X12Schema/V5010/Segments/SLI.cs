@@ -1,15 +1,16 @@
 namespace Machete.X12Schema.V5010
 {
     using X12;
+
     
     public interface SLI :
         X12Segment
     {
         Value<string> LoanTypeCode { get; }
         
-        Value<decimal> Amount1 { get; }
+        Value<decimal> MonetaryAmount1 { get; }
         
-        Value<decimal> Amount2 { get; }
+        Value<decimal> MonetaryAmount2 { get; }
         
         Value<decimal> InterestRate { get; }
         
@@ -31,7 +32,7 @@ namespace Machete.X12Schema.V5010
         
         Value<string> DateTimePeriod3 { get; }
         
-        Value<decimal> Amount3 { get; }
+        Value<decimal> MonetaryAmount3 { get; }
         
         Value<decimal> Quantity1 { get; }
         
