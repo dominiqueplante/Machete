@@ -15,7 +15,7 @@ namespace Machete.X12Schema.V5010
 
         Value<DateTime> Date { get; }
 
-        Value<DateTime> Time { get; }
+        Value<TimeSpan> Time { get; }
 
         Value<string> TransactionTypeCode { get; }
     }
