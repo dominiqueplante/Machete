@@ -32,6 +32,6 @@ namespace Machete.X12Schema.V5010
         
         Value<int> LadingDescription { get; }
         
-        Value<int> LadingValue { get; }
+        Value<decimal> LadingValue { get; }
     }
 }
