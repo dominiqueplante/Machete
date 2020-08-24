@@ -15,7 +15,6 @@ namespace Machete.X12Schema.V5010.Maps
             Value(x => x.LadingExceptionCode, 1, x=>x.FixedLength(1).IsRequired());
             Value(x => x.PackagingFormCode, 2, x=>x.FixedLength(3).IsRequired());
             Value(x => x.LadingQuantity, 3, x=>x.MinLength(1).MaxLength(7));
-
         }
     }
 }
