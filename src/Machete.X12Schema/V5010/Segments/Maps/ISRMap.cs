@@ -3,8 +3,8 @@ namespace Machete.X12Schema.V5010.Maps
     using X12;
     using X12.Configuration;
     using X12.Values.Converters;
-
-
+    
+    
     public class ISRMap :
         X12SegmentMap<ISR, X12Entity>
     {

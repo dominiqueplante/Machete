@@ -2,8 +2,8 @@ namespace Machete.X12Schema.V5010.Maps
 {
     using X12;
     using X12.Configuration;
-
-ß
+    
+    
     public class LoopN1_1_811Map :
         X12LayoutMap<LoopN1_1_811, X12Entity>
     {

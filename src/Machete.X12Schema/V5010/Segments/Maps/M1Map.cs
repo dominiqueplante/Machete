@@ -2,8 +2,8 @@ namespace Machete.X12Schema.V5010.Maps
 {
     using X12;
     using X12.Configuration;
-
-
+    
+    
     public class M1Map :
         X12SegmentMap<M1, X12Entity>
     {
