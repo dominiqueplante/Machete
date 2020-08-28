@@ -2,6 +2,7 @@ namespace Machete.X12Schema.V5010.Maps
 {
     using X12;
     using X12.Configuration;
+    using X12.Values.Converters;
 
 
     public class AT7Map :
@@ -20,11 +21,13 @@ namespace Machete.X12Schema.V5010.Maps
             {
                 x.FixedLength(8);
                 x.IsRequired();
+                x.Converter = X12ValueConverters.VariableDate;
             });
             Value(x => x.Time, 6, x =>
             {
                 x.MinLength(4);
                 x.MaxLength(8);
+                x.Converter = X12ValueConverters.TimeWithSeconds;
             });
             Value(x => x.TimeCode, 7, x => x.FixedLength(2));
         }

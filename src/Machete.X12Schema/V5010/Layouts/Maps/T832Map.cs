@@ -42,6 +42,7 @@ namespace Machete.X12Schema.V5010.Maps
             Layout(x => x.LoopLIN, 27);
             Segment(x => x.TransactionTotals, 28);
             Segment(x => x.TransactionSetTrailer, 29);
+            Segment(x => x.FunctionalGroupTrailer, 30);
         }
     }
 }

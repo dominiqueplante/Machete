@@ -24,6 +24,6 @@ namespace Machete.X12Schema.V5010
         
         Value<string> Description { get; }
         
-        Value<string> TransactionSetPurpose { get; }
+        Value<string> TransactionSetPurposeCode { get; }
     }
 }

@@ -21,7 +21,7 @@ namespace Machete.X12Schema.V5010.Maps
             Value(x => x.CatalogVersionNumber2, 7, x => x.MinLength(1).MaxLength(15));
             Value(x => x.CatalogRevisionNumber2, 8, x => x.MinLength(1).MaxLength(6));
             Value(x => x.Description, 9, x => x.MinLength(1).MaxLength(80));
-            Value(x => x.TransactionSetPurpose, 10, x => x.FixedLength(2));
+            Value(x => x.TransactionSetPurposeCode, 10, x => x.FixedLength(2));
         }
     }
 }

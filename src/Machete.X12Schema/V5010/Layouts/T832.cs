@@ -65,5 +65,7 @@ namespace Machete.X12Schema.V5010
         Segment<CTT> TransactionTotals { get; }
 
         Segment<SE> TransactionSetTrailer { get; }
+        
+        Segment<GE> FunctionalGroupTrailer { get; }
     }
 }
