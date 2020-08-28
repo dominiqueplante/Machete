@@ -28,7 +28,7 @@ namespace Machete.X12Schema.V5010
         
         Segment<SAC> ServicePromotionAllowanceOrChargeInformation { get; }
         
-        SegmentList<CSH> SalesRequirements { get; }
+        Segment<CSH> SalesRequirements { get; }
         
         SegmentList<ITD> TermsOfSale { get; }
 
