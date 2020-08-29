@@ -12,7 +12,7 @@ namespace Machete.X12Schema.V5010.Maps
             Id = "G39";
             Name = "Item Characteristics - Vendor's Selling Unit";
             
-            Value(x => x.UniversalProductCodeCaseCode, 1, x=> x.FixedLength(12));
+            Value(x => x.UPCCaseCode, 1, x=> x.FixedLength(12));
             Value(x => x.ProductOrServiceIdQualifier1, 2, x=> x.FixedLength(2));
             Value(x => x.ProductOrServiceId1, 3, x => x.MinLength(1).MaxLength(48));
             Value(x => x.SpecialHandlingCode, 4, x => x.MinLength(2).MaxLength(3));

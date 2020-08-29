@@ -16,7 +16,7 @@ namespace Machete.X12Schema.V5010
         
         Value<string> UnitOrBasisOfMeasurementCode { get; }
         
-        Value<string> UniversalProductCodeCaseCode1 { get; }
+        Value<string> UPCCaseCode1 { get; }
         
         Value<string> ProductOrServiceIdQualifier1 { get; }
         
@@ -36,7 +36,7 @@ namespace Machete.X12Schema.V5010
         
         Value<string> WeightUnitCode2 { get; }
         
-        Value<string> UniversalProductCodeCaseCode2 { get; }
+        Value<string> UPCCaseCode2 { get; }
         
         Value<string> ProductOrServiceIdQualifier2 { get; }
         

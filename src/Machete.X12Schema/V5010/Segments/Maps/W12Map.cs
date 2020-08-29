@@ -17,7 +17,7 @@ namespace Machete.X12Schema.V5010.Maps
             Value(x => x.NumberOfUnitsShipped, 3, x => x.MinLength(1).MaxLength(10));
             Value(x => x.QuantityDifference, 4, x => x.MinLength(1).MaxLength(9));
             Value(x => x.UnitOrBasisOfMeasurementCode, 5, x => x.FixedLength(2));
-            Value(x => x.UniversalProductCodeCaseCode1, 6, x => x.FixedLength(12));
+            Value(x => x.UPCCaseCode1, 6, x => x.FixedLength(12));
             Value(x => x.ProductOrServiceIdQualifier1, 7, x => x.FixedLength(2));
             Value(x => x.ProductOrServiceId1, 8, x => x.MinLength(1).MaxLength(48));
             Value(x => x.WarehouseLotNumber, 9, x => x.MinLength(1).MaxLength(12));
@@ -27,7 +27,7 @@ namespace Machete.X12Schema.V5010.Maps
             Value(x => x.Weight2, 13, x => x.MinLength(1).MaxLength(10));
             Value(x => x.WeightQualifier2, 14, x => x.MinLength(1).MaxLength(2));
             Value(x => x.WeightUnitCode2, 15, x => x.FixedLength(1));
-            Value(x => x.UniversalProductCodeCaseCode2, 16, x => x.FixedLength(12));
+            Value(x => x.UPCCaseCode2, 16, x => x.FixedLength(12));
             Value(x => x.ProductOrServiceIdQualifier2, 17, x => x.FixedLength(2));
             Value(x => x.ProductOrServiceId2, 18, x => x.MinLength(1).MaxLength(48));
             Value(x => x.LineItemChangeReasonCode, 19, x => x.FixedLength(2));

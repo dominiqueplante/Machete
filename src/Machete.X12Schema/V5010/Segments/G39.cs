@@ -6,7 +6,7 @@ namespace Machete.X12Schema.V5010
     public interface G39 :
         X12Segment
     {
-        Value<string> UniversalProductCodeCaseCode { get; }
+        Value<string> UPCCaseCode { get; }
         
         Value<string> ProductOrServiceIdQualifier1 { get; }
         

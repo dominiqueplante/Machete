@@ -10,7 +10,7 @@ namespace Machete.X12Schema.V5010
         
         Value<string> UnitOrBasisForMeasurementCode { get; }
         
-        Value<string> UniversalProductCodeCaseCode { get; }
+        Value<string> UPCCaseCode { get; }
         
         Value<string> ProductOrServiceIdQualifier { get; }
         

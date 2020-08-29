@@ -15,7 +15,7 @@ namespace Machete.X12Schema.V5010.Maps
             Value(x => x.QuantityOrStatusAdjustmentReasonCode, 1, x => x.FixedLength(2).IsRequired());
             Value(x => x.CreditOrDebitQuantity, 2, x => x.MinLength(1).MaxLength(10).IsRequired());
             Value(x => x.UnitOrBasisOfMeasurementCode, 3, x => x.FixedLength(2).IsRequired());
-            Value(x => x.UniversalProductCodeCaseCode, 4, x => x.FixedLength(12));
+            Value(x => x.UPCCaseCode, 4, x => x.FixedLength(12));
             Value(x => x.ProductOrServiceIdQualifier1, 5, x => x.FixedLength(2));
             Value(x => x.ProductOrServiceId1, 6, x => x.MinLength(1).MaxLength(48));
             Value(x => x.ProductOrServiceIdQualifier2, 7, x => x.FixedLength(2));
