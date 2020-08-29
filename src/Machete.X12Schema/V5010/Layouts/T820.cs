@@ -10,7 +10,7 @@ namespace Machete.X12Schema.V5010
         
         Segment<ST> TransactionSetHeader { get; }
         
-        Segment<BPR> BeginningPaymentOrderOrRemittanceAdvice { get; }
+        Segment<BPR> BeginningSegmentForPaymentOrderOrRemittanceAdvice { get; }
         
         SegmentList<NTE> NoteOrSpecialInstruction { get; }
         

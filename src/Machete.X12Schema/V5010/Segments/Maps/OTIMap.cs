@@ -15,7 +15,7 @@ namespace Machete.X12Schema.V5010.Maps
             
             Value(x => x.ApplicationAcknowledgementCode, 1, x => x.MinLength(1).MaxLength(2).IsRequired());
             Value(x => x.ReferenceIdentificationQualifier, 2, x => x.MinLength(2).MaxLength(3).IsRequired());
-            Value(x => x.ReferenceIdentification, 3, x => x.MinLength(1).MaxLength(50));
+            Value(x => x.ReferenceIdentification, 3, x => x.MinLength(1).MaxLength(50).IsRequired());
             Value(x => x.ApplicationSendersCode, 4, x => x.MinLength(2).MaxLength(15));
             Value(x => x.ApplicationReceiversCode, 5, x => x.MinLength(2).MaxLength(15));
             Value(x => x.Date, 6, x =>

@@ -4,13 +4,13 @@ namespace Machete.X12Schema.V5010.Maps
     using X12.Configuration;
 
 
-    public class M830Map :
-        X12LayoutMap<M830, X12Entity>
+    public class F823Map :
+        X12LayoutMap<F823, X12Entity>
     {
-        public M830Map()
+        public F823Map()
         {
-            Id = "M830";
-            Name = "830 Planning Schedule with Release Capability";
+            Id = "F823";
+            Name = "823 Lockbox";
             
             Segment(x => x.InterchangeControlHeader, 0);
             Layout(x => x.Transaction, 1);

@@ -8,7 +8,7 @@ namespace Machete.X12Schema.V5010
     {
         Segment<ISA> InterchangeControlHeader { get; }
         
-        LayoutList<T824> Transactions { get; }
+        LayoutList<T824> Transaction { get; }
         
         Segment<IEA> InterchangeControlTrailer { get; }
     }

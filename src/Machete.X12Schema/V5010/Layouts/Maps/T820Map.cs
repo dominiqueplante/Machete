@@ -14,7 +14,7 @@ namespace Machete.X12Schema.V5010.Maps
 
             Segment(x => x.FunctionalGroupHeader, 0);
             Segment(x => x.TransactionSetHeader, 1);
-            Segment(x => x.BeginningPaymentOrderOrRemittanceAdvice, 2);
+            Segment(x => x.BeginningSegmentForPaymentOrderOrRemittanceAdvice, 2);
             Segment(x => x.NoteOrSpecialInstruction, 3);
             Segment(x => x.Trace, 4);
             Segment(x => x.Currency, 5);

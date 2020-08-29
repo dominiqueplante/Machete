@@ -4,16 +4,16 @@
     using X12.Configuration;
 
 
-    public class C997Map :
-        X12LayoutMap<C997, X12Entity>
+    public class A997Map :
+        X12LayoutMap<A997, X12Entity>
     {
-        public C997Map()
+        public A997Map()
         {
-            Id = "C997";
+            Id = "A997";
             Name = "997 Functional Acknowledgement";
             
             Segment(x => x.InterchangeControlHeader, 0, x => x.IsRequired());
-            Layout(x => x.Transactions, 1);
+            Layout(x => x.Transaction, 1);
             Segment(x => x.InterchangeControlTrailer, 2);
         }
     }
