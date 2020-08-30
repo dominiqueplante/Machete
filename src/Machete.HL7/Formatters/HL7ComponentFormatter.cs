@@ -35,9 +35,7 @@
             for (int i = 0; i < _formatters.Length; i++)
             {
                 if (i > 0)
-                {
                     context.Append(separator);
-                }
 
                 int position = context.Position;
 
@@ -50,9 +48,7 @@
             if (length == 0)
                 context.Clear();
             else
-            {
                 context.Trim(length);
-            }
         }
 
         public void Format<T>(FormatContext context, T entity)
@@ -60,9 +56,7 @@
         {
             var obj = (object) entity;
             if (obj is TComponent)
-            {
                 Format(context, (TComponent) obj);
-            }
             else
                 throw new ArgumentException($"Argument entity type was {TypeCache.GetShortName(entity.GetType())}, expected {TypeCache<TComponent>.ShortName}");
         }

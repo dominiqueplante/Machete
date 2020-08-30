@@ -32,9 +32,7 @@
             for (int i = 0; i < _formatters.Length; i++)
             {
                 if (i > 0)
-                {
                     context.Append(fieldSeparator);
-                }
 
                 if (i == 1 && tag == "MSH")
                 {

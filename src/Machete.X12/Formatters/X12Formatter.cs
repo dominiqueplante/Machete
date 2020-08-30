@@ -52,7 +52,7 @@
                 }
             }
 
-            return new HL7FormatResult<TSchema>();
+            return new X12FormatResult<TSchema>();
         }
     }
 }

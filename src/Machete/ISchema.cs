@@ -4,14 +4,21 @@
     using System.Collections.Generic;
     using Formatters;
     using TranslatorConfiguration;
-    using Translators;
 
 
     public interface ISchema<TSchema>
         where TSchema : Entity
     {
+        /// <summary>
+        /// Returns a list of all entity types currently registered.
+        /// </summary>
+        /// <returns></returns>
         IReadOnlyList<Type> GetRegisteredEntities();
         
+        /// <summary>
+        /// Return a list of all layout types currently registered.
+        /// </summary>
+        /// <returns></returns>
         IReadOnlyList<Type> GetRegisteredLayouts();
         
         /// <summary>
