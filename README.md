@@ -863,6 +863,25 @@ public interface Order :
 }
 ```
 
+## X12 Specification Mappings
+
+### X12 Segment Mappings
+
+| Req Value | Required? |
+| --------- | --------- |
+| M         | Yes       |
+| M/Z       | No        |
+| O         | No        |
+| O/Z       | No        |
+| X         | No        |
+| X/Z       | No        |
+
+| Type      | C# Type   |
+| --------- | --------- |
+| DT        | DateTime  |
+| AN        | String    |
+| ID        | String    |
+| R         | decimal   |
 
 ## License
 Licensed under the terms of [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
