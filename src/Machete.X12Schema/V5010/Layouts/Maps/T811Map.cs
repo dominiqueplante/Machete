@@ -22,7 +22,7 @@ namespace Machete.X12Schema.V5010.Maps
             Segment(x => x.TermsOfSale, 7);
             Segment(x => x.DateOrTimeReference, 8);
             Segment(x => x.TaxInformation, 9);
-            Layout(x => x.LoopN1, 10);
+            Layout(x => x.LoopN1_1, 10);
             Layout(x => x.LoopFA1, 11);
             Layout(x => x.LoopHL, 12);
             Segment(x=> x.TotalMonetaryValueSummary, 13);

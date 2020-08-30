@@ -8,7 +8,7 @@ namespace Machete.X12Schema.V5010
     {
         Segment<N1> Name { get; }
         
-        LayoutList<LoopBAL_2_811> LoopBAL { get; }
+        LayoutList<LoopBAL_811> LoopBAL { get; }
         
         LayoutList<LoopITA_3_811> LoopITA { get; }
         

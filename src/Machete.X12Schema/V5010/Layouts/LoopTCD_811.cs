@@ -14,6 +14,6 @@ namespace Machete.X12Schema.V5010
 
         SegmentList<ITA> AllowanceChargeOrService { get; }
 
-        LayoutList<LoopQTY_811> LoopQty { get; }
+        LayoutList<LoopQTY_811> LoopQTY { get; }
     }
 }

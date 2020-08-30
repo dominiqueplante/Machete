@@ -25,10 +25,10 @@ namespace Machete.X12Schema.V5010.Maps
             Segment(x=> x.YesNoQuestion, 10);
             Segment(x=> x.IndustryCodeIdentification, 11);
             Segment(x=> x.PlaceLocationDescription, 12);
-            Layout(x=> x.AMTLoop, 13);
-            Layout(x=> x.QTYLoop, 14);
-            Layout(x=> x.ITALoop, 15);
-            Layout(x=> x.NM1Loop, 16);
+            Layout(x=> x.LoopAMT, 13);
+            Layout(x=> x.LoopQTY, 14);
+            Layout(x=> x.LoopITA, 15);
+            Layout(x=> x.LoopNM1, 16);
         }
     }
 }

@@ -3,7 +3,7 @@ namespace Machete.X12Schema.V5010
     using X12;
 
 
-    public interface LoopNM1_811 :
+    public interface LoopNM1_1_811 :
         X12Layout
     {
         Segment<NM1> IndividualOrOrganizationName { get; }

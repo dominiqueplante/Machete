@@ -26,7 +26,7 @@ namespace Machete.X12Schema.V5010
 
         SegmentList<TXI> TaxInformation { get; }
 
-        LayoutList<LoopN1_1_811> LoopN1 { get; }
+        LayoutList<LoopN1_1_811> LoopN1_1 { get; }
 
         LayoutList<LoopFA1_811> LoopFA1 { get; }
 
@@ -34,7 +34,7 @@ namespace Machete.X12Schema.V5010
 
         Segment<TDS> TotalMonetaryValueSummary { get; }
 
-        LayoutList<LoopITA_811> LoopITA { get; }
+        LayoutList<LoopITA_2_811> LoopITA { get; }
 
         LayoutList<LoopBAL_811> LoopBAL { get; }
 

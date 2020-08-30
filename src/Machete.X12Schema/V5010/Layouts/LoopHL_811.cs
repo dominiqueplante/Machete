@@ -8,9 +8,9 @@ namespace Machete.X12Schema.V5010
     {
         Segment<HL> HierchicalLevel { get; }
 
-        LayoutList<LoopLX_811> LoopLX { get; }
+        LayoutList<LoopLX_1_811> LoopLX { get; }
 
-        Layout<LoopNM1_811> LoopNM1 { get; }
+        Layout<LoopNM1_1_811> LoopNM1 { get; }
 
         LayoutList<LoopITA_1_811> LoopITA { get; }
 

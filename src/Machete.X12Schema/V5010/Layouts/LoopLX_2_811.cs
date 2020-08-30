@@ -10,8 +10,8 @@ namespace Machete.X12Schema.V5010
 
         Segment<REF> ReferenceInformation { get; }
 
-        LayoutList<LoopLX_AMT> LoopLX_AMT { get; }
+        LayoutList<LoopAMT_2_811> LoopAMT { get; }
 
-        LayoutList<LoopLX_ITA> LoopLX_ITA { get; }
+        LayoutList<LoopITA_4_811> LoopITA { get; }
     }
 }

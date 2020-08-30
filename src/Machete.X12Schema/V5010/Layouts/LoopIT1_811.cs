@@ -32,12 +32,12 @@ namespace Machete.X12Schema.V5010
 
         SegmentList<LCD> PlaceLocationDescription { get; }
 
-        LayoutList<HL_IT1_AMT_811> AMTLoop { get; }
+        LayoutList<LoopAMT_1_811> LoopAMT { get; }
 
-        LayoutList<HL_IT1_QTY_811> QTYLoop { get; }
+        LayoutList<LoopQTY_811> LoopQTY { get; }
 
-        LayoutList<HL_IT1_ITA_811> ITALoop { get; }
+        LayoutList<LoopITA_1_811> LoopITA { get; }
 
-        LayoutList<HL_IT1_NM1_811> NM1Loop { get; }
+        LayoutList<LoopNM1_2_811> LoopNM1 { get; }
     }
 }

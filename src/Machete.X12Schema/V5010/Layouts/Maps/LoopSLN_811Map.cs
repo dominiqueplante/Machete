@@ -22,10 +22,10 @@ namespace Machete.X12Schema.V5010.Maps
             Segment(x => x.TaxInformation, 7);
             Segment(x => x.ReferenceInformation, 8);
             Segment(x => x.AdministrativeCommunicationsContact, 9);
-            Segment(x => x.DateTimeReference, 10);
+            Segment(x => x.DateOrTimeReference, 10);
             Segment(x => x.MonetaryAmountInformation, 11);
-            Segment(x => x.MessageInformation, 12);
-            Layout(x => x.LoopQty, 13);
+            Segment(x => x.MessageText, 12);
+            Layout(x => x.LoopQTY, 13);
             Layout(x => x.LoopNM1, 14);
         }
     }

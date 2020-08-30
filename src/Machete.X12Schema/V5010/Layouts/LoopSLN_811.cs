@@ -22,18 +22,18 @@ namespace Machete.X12Schema.V5010
 
         SegmentList<TXI> TaxInformation { get; }
 
-        SegmentList<TXI> ReferenceInformation { get; }
+        SegmentList<REF> ReferenceInformation { get; }
 
         SegmentList<PER> AdministrativeCommunicationsContact { get; }
 
-        SegmentList<DTM> DateTimeReference { get; }
+        SegmentList<DTM> DateOrTimeReference { get; }
 
         SegmentList<AMT> MonetaryAmountInformation { get; }
 
-        SegmentList<MSG> MessageInformation { get; }
+        SegmentList<MSG> MessageText { get; }
 
-        LayoutList<LoopQTY_811> LoopQty { get; }
+        LayoutList<LoopQTY_811> LoopQTY { get; }
 
-        LayoutList<LoopSLN_NM1_811> LoopNM1 { get; }
+        LayoutList<LoopNM1_3_811> LoopNM1 { get; }
     }
 }

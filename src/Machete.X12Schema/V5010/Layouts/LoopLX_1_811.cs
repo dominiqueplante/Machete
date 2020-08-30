@@ -3,7 +3,7 @@ namespace Machete.X12Schema.V5010
     using X12;
 
 
-    public interface LoopLX_811 :
+    public interface LoopLX_1_811 :
         X12Layout
     {
         Segment<LX> TransactionSetLineNumber { get; }
@@ -24,6 +24,6 @@ namespace Machete.X12Schema.V5010
 
         SegmentList<TXI> TaxInformation { get; }
 
-        LayoutList<LoopQTY_811> LoopQty { get; }
+        LayoutList<LoopQTY_811> LoopQTY { get; }
     }
 }

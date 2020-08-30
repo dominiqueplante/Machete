@@ -16,7 +16,7 @@ namespace Machete.X12Schema.V5010.Maps
             Segment(x =>x.ServiceCharacteristicInformation, 1);
             Segment(x =>x.AllowanceChargeOrService, 2);
             Segment(x =>x.RatingFactors, 3);
-            Layout(x =>x.LoopQty, 4);
+            Layout(x =>x.LoopQTY, 4);
         }
     }
 }

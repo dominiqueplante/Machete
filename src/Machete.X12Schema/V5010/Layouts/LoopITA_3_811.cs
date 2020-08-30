@@ -8,13 +8,13 @@ namespace Machete.X12Schema.V5010
     {
         Segment<ITA> AllowanceChargeOrService { get; }
         
-        Segment<DTM> DateOrTimeReference { get; }
+        SegmentList<DTM> DateOrTimeReference { get; }
         
         Segment<AMT> MonetaryAmountInformation { get; }
 
-        Segment<SI> ServiceCharacteristicIdentification { get; }
+        SegmentList<SI> ServiceCharacteristicIdentification { get; }
         
-        Segment<REF> ReferenceInformation { get; }
+        SegmentList<REF> ReferenceInformation { get; }
 
         Segment<CUR> Currency { get; }
     }
