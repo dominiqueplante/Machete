@@ -66,7 +66,7 @@ namespace Machete.X12Schema.V5010
         
         Segment<M2> SalesOrDeliveryTerms { get; }
         
-        Segment<M2> TariffReference { get; }
+        Segment<L7> TariffReference { get; }
         
         SegmentList<NTE> NoteOrSpecialInstruction { get; }
         
