@@ -7,13 +7,13 @@ namespace Machete.X12Schema.V5010
     public interface TFS :
         X12Segment
     {
-        Value<string> ReferenceIdentificationQualifier01 { get; }
+        Value<string> ReferenceIdentificationQualifier1 { get; }
 
-        Value<string> ReferenceIdentification02 { get; }
+        Value<string> ReferenceIdentification2 { get; }
 
-        Value<string> ReferenceIdentificationQualifier03 { get; }
+        Value<string> ReferenceIdentificationQualifier3 { get; }
 
-        Value<string> ReferenceIdentification04 { get; }
+        Value<string> ReferenceIdentification4 { get; }
 
         Value<string> IdentificationCodeQualifier { get; }
 

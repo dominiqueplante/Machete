@@ -12,10 +12,9 @@ namespace Machete.X12Schema.V5010.Maps
             Id = "FGS";
             Name = "Form Group";
 
-            Value(x => x.AssignedIdentifier, 1, x=> x.MinLength(1).MaxLength(20));
-            Value(x => x.ReferenceIdentificationQualifier, 1, x=> x.MinLength(2).MaxLength(3));
-            Value(x => x.ReferenceIdentification, 2, x=> x.MinLength(1).MaxLength(50));
-
+            Value(x => x.AssignedIdentifier, 1, x => x.MinLength(1).MaxLength(20));
+            Value(x => x.ReferenceIdentificationQualifier, 1, x => x.MinLength(2).MaxLength(3));
+            Value(x => x.ReferenceIdentification, 2, x => x.MinLength(1).MaxLength(50));
         }
     }
 }
