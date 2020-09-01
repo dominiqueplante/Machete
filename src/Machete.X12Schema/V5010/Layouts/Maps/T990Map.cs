@@ -14,7 +14,7 @@ namespace Machete.X12Schema.V5010.Maps
             
             Segment(x => x.FunctionalGroupHeader, 0);
             Segment(x => x.TransactionSetHeader, 1);
-            Segment(x => x.BeginningBookingOrPickupDelivery, 2);
+            Segment(x => x.BeginningSegmentForBookingOrPickupDelivery, 2);
             Segment(x => x.BusinessInstructionsAndReferenceNumber, 3);
             Segment(x => x.TransactionSetTrailer, 4);
             Segment(x => x.FunctionalGroupTrailer, 5);

@@ -10,7 +10,7 @@ namespace Machete.X12Schema.V5010
         
         Segment<ST> TransactionSetHeader { get; }
         
-        Segment<B1> BeginningBookingOrPickupDelivery { get; }
+        Segment<B1> BeginningSegmentForBookingOrPickupDelivery { get; }
         
         Segment<L11> BusinessInstructionsAndReferenceNumber { get; }
         
