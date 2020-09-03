@@ -8,9 +8,9 @@ namespace Machete.X12Schema.V5010
     {
         Segment<E1> EmptyCarDispositionPendedDestinationConsignee { get; }
         
-        Segment<E1> EmptyCarDispositionPendedDestinationCity { get; }
+        Segment<E4> EmptyCarDispositionPendedDestinationCity { get; }
         
-        SegmentList<E1> EmptyCarDispositionPendedDestinationRoute { get; }
+        SegmentList<E5> EmptyCarDispositionPendedDestinationRoute { get; }
         
         Segment<PI> PriceAuthorityIdentification { get; }
     }
